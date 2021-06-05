@@ -1,11 +1,36 @@
+# NodeJS, AngularJ & MongoDB
 
-```
-  
-  _   _           _           _  _____ 
- | \ | |         | |         | |/ ____|
- |  \| | ___   __| | ___     | | (___  
- | . ` |/ _ \ / _` |/ _ \_   | |\___ \ 
- | |\  | (_) | (_| |  __/ |__| |____) |
- |_| \_|\___/ \__,_|\___|\____/|_____/ 
+Sever Side web application for managing users and parcels for customers
+
+# How to install
+
+NSTALL DATABASE
+
+Make sure you have MongoDB installed and running 
+
+Download the latest production release of MongoDB from [here](https://www.mongodb.com/download-center?_ga=2.123194891.1822248697.1522395660-2086062422.1522395660#production)
+
+MongoDB requires a data directory to store all data. Create the directory `/data/db` on the drive from which you'll start MongoDB.
+
+1. Git Clone: https://github.com/anas-01/parcelum
+2. Open the project in your preferred IDE (Visual Studio, Netbeans etc)
+3. Open the terminal and make sure you are in the parcelum directory by typing: cd parcelum
+4. In the parcelum directory enter the command: npm i
+5. Then enter the command: npm start
+6. Open http://localhost:3000
+7. Wait for the application to finish building
+8. Done!
 
 
+# Features
+
+1. JWT Authorised Login
+2. Create customers
+3. Create parcels
+4. Profile Management
+5. Change password
+6. Assign a parcel to a customer
+7. Set parcel status
+8. Search for a specific parcel
+9. CRUD Operations
+10. Assign roles for users
