@@ -31,6 +31,6 @@ MongoDB requires a data directory to store all data. Create the directory `/data
 5. Change password
 6. Assign a parcel to a customer
 7. Set parcel status
-8. Search for a specific parcel
+8. Search for a specific customer or parcel
 9. CRUD Operations
 10. Assign roles for users
