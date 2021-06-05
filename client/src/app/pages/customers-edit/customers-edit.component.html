@@ -1,0 +1,66 @@
+<!-- TITLE -->
+<div class="mb-40 mt-40">
+    <h1>Customers Edit</h1>
+</div>
+<div class="card mb-40">
+    <div class="card-header">
+        <i class="fa fa-edit"></i> Edit
+    </div>
+    <div class="card-body">
+        <form #editForm="ngForm" [ngClass]="{'was-validated': formValid!=null}">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="Adress">Adress *</label>
+                        <input type="text" class="form-control" id="Adress" [(ngModel)]="item.Adress" name="Adress" #Adress="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ContactNumber">ContactNumber</label>
+                        <input type="number" class="form-control" id="ContactNumber" [(ngModel)]="item.ContactNumber" name="ContactNumber" #ContactNumber="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="DateofBirth">DateofBirth</label>
+                        <input type="date" class="form-control" id="DateofBirth" [(ngModel)]="item.DateofBirth" name="DateofBirth" #DateofBirth="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="text" class="form-control" id="Email" [(ngModel)]="item.Email" name="Email" #Email="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="FullName">FullName *</label>
+                        <input type="text" class="form-control" id="FullName" [(ngModel)]="item.FullName" name="FullName" #FullName="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Title">Title</label>
+                        <select name="Title" id="Title" [(ngModel)]="item.Title" class="form-control" #Title="ngModel" >
+                            <option value=""></option>
+                            <option value="Dr">Dr</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                        </select>
+                    </div>
+                    <!-- RELATIONS -->
+                    
+
+
+                    <h2 *ngIf="externalParcels_customer[0]">External Relations</h2>
+        
+                        <h3 *ngIf="externalParcels_customer[0]">Parcels</h3>
+                        <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let item of externalParcels_customer">{{item._id}}</li>
+                        </ul>
+
+                    <!-- BUTTON BAR -->
+                    <div class="mt-40">
+                        <button class="btn btn-primary pull-right" (click)="save(editForm.valid, item)">Save</button>
+                        <button class="btn btn-secondary pull-right mr-2" (click)="goBack()">Back To List</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

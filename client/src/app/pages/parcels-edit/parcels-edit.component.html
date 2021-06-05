@@ -1,0 +1,77 @@
+<!-- TITLE -->
+<div class="mb-40 mt-40">
+    <h1>Parcels Edit</h1>
+</div>
+<div class="card mb-40">
+    <div class="card-header">
+        <i class="fa fa-edit"></i> Edit
+    </div>
+    <div class="card-body">
+        <form #editForm="ngForm" [ngClass]="{'was-validated': formValid!=null}">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="Destination">Destination *</label>
+                        <input type="text" class="form-control" id="Destination" [(ngModel)]="item.Destination" name="Destination" #Destination="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Height">Height</label>
+                        <input type="number" class="form-control" id="Height" [(ngModel)]="item.Height" name="Height" #Height="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="Length">Length</label>
+                        <input type="number" class="form-control" id="Length" [(ngModel)]="item.Length" name="Length" #Length="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="ParcelContents">ParcelContents *</label>
+                        <input type="text" class="form-control" id="ParcelContents" [(ngModel)]="item.ParcelContents" name="ParcelContents" #ParcelContents="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Status">Status</label>
+                        <select name="Status" id="Status" [(ngModel)]="item.Status" class="form-control" #Status="ngModel" >
+                            <option value=""></option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Failed">Failed</option>
+                            <option value="Pending">Pending</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Type">Type</label>
+                        <select name="Type" id="Type" [(ngModel)]="item.Type" class="form-control" #Type="ngModel" >
+                            <option value=""></option>
+                            <option value="Letter">Letter</option>
+                            <option value="Parcel">Parcel</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Weight">Weight *</label>
+                        <input type="number" class="form-control" id="Weight" [(ngModel)]="item.Weight" name="Weight" #Weight="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Width">Width</label>
+                        <input type="number" class="form-control" id="Width" [(ngModel)]="item.Width" name="Width" #Width="ngModel" >
+                    </div>
+                    <!-- RELATIONS -->
+                    <h2 class="mb-20">Relations</h2>
+
+                    <label for="customers">Customers</label>
+                    <select name="customer" id="customer" [(ngModel)]="item.customer" class="form-control" #customer="ngModel"  >
+                        <option *ngFor="let item of listCustomer" [value]="item._id">{{item._id}}</option>
+                    </select>
+
+                    
+        
+
+                    <!-- BUTTON BAR -->
+                    <div class="mt-40">
+                        <button class="btn btn-primary pull-right" (click)="save(editForm.valid, item)">Save</button>
+                        <button class="btn btn-secondary pull-right mr-2" (click)="goBack()">Back To List</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

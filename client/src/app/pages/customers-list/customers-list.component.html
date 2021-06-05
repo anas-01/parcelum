@@ -1,0 +1,123 @@
+<!-- TITLE -->
+<div class="mb-40 mt-40">
+    <h1>Customers List</h1>
+</div>
+
+<!-- SEARCH FORM -->
+<div class="card">
+
+    <div class="card-header">
+        <i class="fa fa-search"></i> Search
+    </div>
+    <div class="card-body">
+        <form #searchForm="ngForm">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="Adress">Adress</label>
+                        <input type="text" class="form-control" id="Adress" [(ngModel)]="search.Adress" name="Adress" #Adress="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="ContactNumber">ContactNumber</label>
+                        <input type="number" class="form-control" id="ContactNumber" [(ngModel)]="search.ContactNumber" name="ContactNumber" #ContactNumber="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="DateofBirth">DateofBirth</label>
+                        <input type="date" class="form-control" id="DateofBirth" [(ngModel)]="search.DateofBirth" name="DateofBirth" #DateofBirth="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="text" class="form-control" id="Email" [(ngModel)]="search.Email" name="Email" #Email="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="FullName">FullName</label>
+                        <input type="text" class="form-control" id="FullName" [(ngModel)]="search.FullName" name="FullName" #FullName="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="Title">Title</label>
+                        <select name="Title" id="Title" [(ngModel)]="search.Title" class="form-control" #Title="ngModel">
+                            <option value="Dr">Dr</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- TABLE -->
+<table class="table mt-40">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Adress</th>
+            <th scope="col">ContactNumber</th>
+            <th scope="col">DateofBirth</th>
+            <th scope="col">Email</th>
+            <th scope="col">FullName</th>
+            <th scope="col">Title</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of list | search: { 'Adress': search.Adress, 'ContactNumber': search.ContactNumber, 'DateofBirth': search.DateofBirth, 'Email': search.Email, 'FullName': search.FullName, 'Title': search.Title }">
+            <!-- ATTRIBUTES -->
+            <td>
+                <a [routerLink]="['/customerses/', item._id]">{{item._id}}</a>
+            </td>
+            <td>{{item.Adress }}</td>
+            <td>{{item.ContactNumber }}</td>
+            <td>{{item.DateofBirth | date }}</td>
+            <td>{{item.Email }}</td>
+            <td>{{item.FullName }}</td>
+            <td>{{item.Title }}</td>
+
+            <!-- DELETE BUTTON -->
+            <td>
+                <button class="btn btn-danger text-center" data-toggle="modal" data-target="#deleteModal" (click)="selectId(item._id)">
+                    <span>
+                        <i class="fa fa-trash"></i>
+                    </span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    <div class="no-result" *ngIf="(list | search: {   'Adress': search.Adress ,  'ContactNumber': search.ContactNumber ,  'DateofBirth': search.DateofBirth ,  'Email': search.Email ,  'FullName': search.FullName ,  'Title': search.Title  }).length == 0">
+        No items found
+    </div>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="fa fa-times-circle"></i>&nbsp;&nbsp;Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Do you want remove item?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteItem()">YES</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BUTTON -->
+<button class="btn btn-primary text-center pull-right mb-20" routerLink="/customerses/new">
+    <span>
+        <i class="fa fa-plus"></i>
+    </span>
+</button>
+
+<div class="clearfix"></div>
