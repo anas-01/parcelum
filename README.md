@@ -1,6 +1,6 @@
-# NodeJS, AngularJ & MongoDB
+# NodeJS, AngularJS & MongoDB
 
-Sever Side web application for managing users and parcels for customers
+Sever Side web application for managing users and parcels for customers. The application makes use of many popular frameworks and templates such as angular, hbs, express.
 
 # How to install
 
