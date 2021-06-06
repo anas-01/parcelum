@@ -2,7 +2,7 @@
   "name": "parcelum",
   "version": "1.0.0",
   "private": true,
-  "description": "parcelum generated with Skaffolder Angular 6 - Node JS template",
+  "description": "parcelum created with Angular 6 - Node JS template",
   "scripts": {
     "install": "cd client && yarn install && cd ../server && yarn install",
     "start": "concurrently --raw \"cd server && yarn start\" \"cd client && yarn run build --watch\" ",
