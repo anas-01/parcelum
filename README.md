@@ -29,8 +29,9 @@ MongoDB requires a data directory to store all data. Create the directory `/data
 3. Create parcels
 4. Profile Management
 5. Change password
-6. Assign a parcel to a customer
-7. Set parcel status
-8. Search for a specific customer or parcel
-9. CRUD Operations
-10. Assign roles for users
+6. Assign a parcel to a customer using customer ID
+7. Makes use of ERD model
+8. Set parcel status
+9. Search for a specific customer or parcel
+10. CRUD Operations
+11. Assign roles for users
