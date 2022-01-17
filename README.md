@@ -17,8 +17,8 @@ MongoDB requires a data directory to store all data. Create the directory `/data
 3. Open the terminal and make sure you are in the parcelum directory by typing: cd parcelum
 4. In the parcelum directory enter the command: npm i
 5. Then enter the command: npm start
-6. Open http://localhost:3000
-7. Wait for the application to finish building
+6. Wait for the application to finish building
+7. Open http://localhost:3000
 8. Done!
 
 
