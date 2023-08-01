@@ -13,7 +13,7 @@ Download the latest production release of MongoDB from [here](https://www.mongod
 MongoDB requires a data directory to store all data. Create the directory `/data/db` on the drive from which you'll start MongoDB.
 
 1. Git Clone: https://github.com/anas-01/parcelum
-2. Open the project in your preferred IDE (Visual Studio, Netbeans etc)
+2. Open the project in your preferred IDE (Visual Studio)
 3. Open the terminal and make sure you are in the parcelum directory by typing: cd parcelum
 4. In the parcelum directory enter the command: npm i
 5. Then enter the command: npm start
