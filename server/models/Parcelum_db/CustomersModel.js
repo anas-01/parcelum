@@ -15,8 +15,7 @@ const customModel = {
       });
     },
      
-   */
-
+  
 
   /**
    * Override here your custom queries

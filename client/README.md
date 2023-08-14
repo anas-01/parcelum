@@ -10,11 +10,6 @@
                  |___/                            
 ```
 
-
-
-For more documentation visit https://skaffolder.com/#/documentation
-
-
 --------------
 ### START APPLICATION
 --------------
