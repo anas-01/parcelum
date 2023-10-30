@@ -1,4 +1,4 @@
-# NodeJS, AngularJS & MongoDB
+# NodeJS, TypeScript, AngularJS & MongoDB
 
 Sever Side web application for managing users and parcels for customers. The application makes use of frameworks and templates such as NodeJS, AngularJS, ExpressJS, JavaScript, TypeScript, MongoDB, Docker, Yarn
 
