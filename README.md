@@ -23,7 +23,6 @@ MongoDB requires a data directory to store all data. Create the directory `/data
 
 
 # Features
-
 1. JWT Authorised Login
 2. Create customers
 3. Create parcels
